@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Prompt Writer</title>
+        <link href="prompt-writer.css" rel="stylesheet">
+
+        <style media="screen">
+            #text-prompt {
+                font-size: 50px;
+            }
+        </style>
+
+    </head>
+    <body>
+
+        <div id="text-prompt"></div>
+
+        <script src="prompt-writer.js"></script>
+
+        <script type="text/javascript">
+
+            var promptWriter = new TextWriter({
+
+                // Selector that will receive the text
+                element        : document.getElementById('text-prompt'),
+
+                // Text
+                text           : ['The quick brown fox...', 'jumps over...', 'the lazy dog.'],
+
+                // Duration before the text starts writing
+                addDelay       : 0,
+
+                // How fast each letter is added
+                addSpeed       : 10,
+
+                // Somewhat simulate human typing by varying the speed (by a +/- variance)
+                speedVariance  : 150,
+
+                // Delay deleting before erasing
+                deleteDelay    : 1500,
+
+                // How fast each letter is removed
+                deleteSpeed    : 50,
+
+                // Infinite loop
+                loopInfinitely: true,
+
+                // End the text where? 'start' or 'end' this needs to be implemented
+                // endPoint: 'end',
+
+                // Character to use for the cursor: | and _ are great
+                cursorCharacter: '|'
+
+            });
+
+        </script>
+    </body>
+</html>

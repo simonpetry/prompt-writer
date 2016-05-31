@@ -1,0 +1,32 @@
+/* Base styles */
+.text-fill {
+    font-family: Arial, sans-serif;
+}
+
+.text-fill-cursor {
+    position: relative;
+    top: -3px;
+    display: inline-block;
+    color: #000;
+}
+
+.text-fill-cursor--animate {
+    animation: cursor-blink .8s infinite;
+}
+
+/* Animation */
+@keyframes cursor-blink {
+
+    0% {
+        color: #000;
+    }
+
+    50% {
+        color: #fff;
+    }
+
+    100% {
+        color: #000;
+    }
+
+}
