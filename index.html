@@ -7,6 +7,7 @@
 
     <link rel="stylesheet" href="stylesheets/styles.css">
     <link rel="stylesheet" href="stylesheets/github-light.css">
+    <link rel="stylesheet" href="stylesheets/prompt-writer.css">
     <meta name="viewport" content="width=device-width">
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -29,7 +30,7 @@
       </header>
       <section>
         <h1>
-<a id="prompt-writer" class="anchor" href="#prompt-writer" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>prompt-writer</h1>
+<a id="prompt-writer" class="anchor" href="#prompt-writer" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><span id="prompt-writer"></span></h1>
 
 <p>A text / prompt writer simulatier with configurations and written in ES2015</p>
 
@@ -87,6 +88,43 @@ If you want to include it in your project, here's the configuration layout:</p>
       </footer>
     </div>
     <script src="javascripts/scale.fix.js"></script>
-    
+    <script src="javascripts/prompt-writer.js"></script>
+    <script type="text/javascript">
+
+        var promptWriter = new TextWriter({
+
+            // Selector that will receive the text
+            element        : document.getElementById('prompt-writer'),
+
+            // Text
+            text           : ['Prompt-writer', 'The quick brown fox jumps...', 'over the lazy dog.'],
+
+            // Duration before the text starts writing
+            addDelay       : 0,
+
+            // How fast each letter is added
+            addSpeed       : 10,
+
+            // Somewhat simulate human typing by varying the speed (by a +/- variance)
+            speedVariance  : 150,
+
+            // Delay deleting before erasing
+            deleteDelay    : 1500,
+
+            // How fast each letter is removed
+            deleteSpeed    : 50,
+
+            // Infinite loop
+            loopInfinitely: true,
+
+            // End the text where? 'start' or 'end' this needs to be implemented
+            // endPoint: 'end',
+
+            // Character to use for the cursor: | and _ are great
+            cursorCharacter: '|'
+
+        });
+
+    </script>
   </body>
 </html>
