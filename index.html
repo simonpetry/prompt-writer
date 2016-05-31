@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Prompt-writer by simonpetry</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-light.css">
+    <meta name="viewport" content="width=device-width">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Prompt-writer</h1>
+        <p>A text / prompt writer simulatier with configurations and written in ES2015</p>
+
+        <p class="view"><a href="https://github.com/simonpetry/prompt-writer">View the Project on GitHub <small>simonpetry/prompt-writer</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/simonpetry/prompt-writer/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/simonpetry/prompt-writer/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/simonpetry/prompt-writer">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
+<a id="prompt-writer" class="anchor" href="#prompt-writer" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>prompt-writer</h1>
+
+<p>A text / prompt writer simulatier with configurations and written in ES2015</p>
+
+<p>A couple of hours trying out some of the new ES2015 features.
+If you want to include it in your project, here's the configuration layout:</p>
+
+<p><strong>Required</strong>: element, provide it an element</p>
+
+<pre><code>element: document.getElementById('text-prompt')
+</code></pre>
+
+<p><strong>Required</strong>: text, an array of strings, minimum is a single string</p>
+
+<pre><code>text: ['The quick brown fox...', 'jumps over...', 'the lazy dog.']
+</code></pre>
+
+<p><strong>Optional</strong>: Duration before the text starts writing, in ms</p>
+
+<pre><code>addDelay: 0
+</code></pre>
+
+<p><strong>Optional</strong>: How fast each letter is added, in ms</p>
+
+<pre><code>addSpeed: 10
+</code></pre>
+
+<p><strong>Optional</strong>: Somewhat simulate human typing by varying the speed (by a +/- variance), in ms</p>
+
+<pre><code>speedVariance: 150
+</code></pre>
+
+<p><strong>Optional</strong>: Delay deleting before erasing, in ms</p>
+
+<pre><code>deleteDelay: 1500
+</code></pre>
+
+<p><strong>Optional</strong>: How fast each letter is removed, in ms</p>
+
+<pre><code>deleteSpeed: 50
+</code></pre>
+
+<p><strong>Optional</strong>: Infinite loop</p>
+
+<pre><code>loopInfinitely: true
+</code></pre>
+
+<p><strong>Optional</strong>: Character to use for the cursor: <code>|</code> and <code>_</code> are great</p>
+
+<pre><code>cursorCharacter: '|'
+</code></pre>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/simonpetry">simonpetry</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
