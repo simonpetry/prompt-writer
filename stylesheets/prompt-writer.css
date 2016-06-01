@@ -1,13 +1,16 @@
 /* Base styles */
 .text-fill {
     font-family: Arial, sans-serif;
+    color: rgb(45, 239, 45);
+    font-weight: 100;
 }
 
 .text-fill-cursor {
     position: relative;
-    top: -3px;
+    top: -2px;
+    left: -3px;
     display: inline-block;
-    color: #000;
+    color: rgb(45, 239, 45);
 }
 
 .text-fill-cursor--animate {
@@ -18,15 +21,57 @@
 @keyframes cursor-blink {
 
     0% {
-        color: #000;
+        opacity: 1;
     }
 
     50% {
-        color: #fff;
+        opacity: 0;
     }
 
     100% {
-        color: #000;
+        opacity: 1;
     }
 
 }
+
+.pseudo-console {
+    height: 200px;
+    background: #333;
+    box-shadow: 0 3px 7px 0 rgba(0,0,0,0.2);
+    border-radius: 4px;
+    padding: 15px;
+}
+
+    .pseudo-console-chrome {
+        position: relative;
+        top: -13px;
+        margin: -15px -15px 0 -15px;
+        padding: 0 15px;
+        height: 30px;
+        width: 100%;
+        background: #ccc;
+        box-shadow: 0 1px 0px 0 rgba(255,255,255,0.3), inset 0 -1px 0 0 rgba(0, 0, 0, 0.6);
+        border-top-left-radius: 4px;
+        border-top-right-radius: 4px;
+    }
+
+    .pseudo-console-button {
+        display: inline-block;
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        background: blue;
+    }
+
+        .pseudo-console-button:last-child {
+            margin-right: -8px;
+            margin-top: 8px;
+        }
+
+        .pseudo-console-button--blue  { background: rgb(113, 156, 255) }
+        .pseudo-console-button--green { background: rgb(94, 130, 94); }
+        .pseudo-console-button--red   { background: rgb(172, 83, 83); }
+
+        .float-right {
+            float: right;
+        }

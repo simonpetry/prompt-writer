@@ -31,9 +31,7 @@ class TextWriter {
 
         this.element.innerHTML = `
             <span class="text-fill"></span>
-            <span class="text-fill-cursor${ !!this.addDelay ? ' text-fill-cursor--animate' : '' }">
-                ${ this.cursorCharacter }
-            </span>`;
+            <span class="text-fill-cursor${ !!this.addDelay ? ' text-fill-cursor--animate' : '' }">${ this.cursorCharacter }</span>`;
 
         this.textLength = this.text[ this._textIndexFirst ].length;
         this.counter    = 0;

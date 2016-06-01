@@ -17,6 +17,7 @@
     <div class="wrapper">
       <header>
         <h1>Prompt-writer</h1>
+
         <p>A text / prompt writer simulatier with configurations and written in ES2015</p>
 
         <p class="view"><a href="https://github.com/simonpetry/prompt-writer">View the Project on GitHub <small>simonpetry/prompt-writer</small></a></p>
@@ -29,8 +30,24 @@
         </ul>
       </header>
       <section>
+
+      <div class="pseudo-console">
+          <div class="pseudo-console-chrome">
+              <div class="float-right">
+                  <span class="pseudo-console-button pseudo-console-button--blue"></span>
+                  <span class="pseudo-console-button pseudo-console-button--green"></span>
+                  <span class="pseudo-console-button pseudo-console-button--red"></span>
+              </div>
+          </div>
+          <div class="pseudo-console-window">
+              <span id="prompt-writer" >Prompt-writer</span>
+          </div>
+      </div>
+
         <h1>
-<a id="prompt-writer" class="anchor" href="#prompt-writer" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><span id="prompt-writer"></span></h1>
+<a class="anchor" href="#prompt-writer" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><span id="prompt-writer"></span></h1>
+
+
 
 <p>A text / prompt writer simulatier with configurations and written in ES2015</p>
 
@@ -97,7 +114,14 @@ If you want to include it in your project, here's the configuration layout:</p>
             element        : document.getElementById('prompt-writer'),
 
             // Text
-            text           : ['Prompt-writer', 'The quick brown fox jumps...', 'over the lazy dog.'],
+            text           : [
+                'Prompt-writer',
+                'This is the beginning of a beautiful friendship.',
+                'You\'re gonna need a bigger boat.',
+                'Nobody exists on purpose. Nobody belongs anywhere. Everybody’s gonna die. Come watch TV?',
+                'May the Force be with you.',
+                'The first rule of Fight Club is: You do not talk about Fight Club.'
+            ],
 
             // Duration before the text starts writing
             addDelay       : 0,
@@ -106,13 +130,13 @@ If you want to include it in your project, here's the configuration layout:</p>
             addSpeed       : 10,
 
             // Somewhat simulate human typing by varying the speed (by a +/- variance)
-            speedVariance  : 150,
+            speedVariance  : 100,
 
             // Delay deleting before erasing
             deleteDelay    : 1500,
 
             // How fast each letter is removed
-            deleteSpeed    : 50,
+            deleteSpeed    : 40,
 
             // Infinite loop
             loopInfinitely: true,
