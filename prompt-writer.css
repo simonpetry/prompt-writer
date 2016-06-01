@@ -5,7 +5,8 @@
 
 .text-fill-cursor {
     position: relative;
-    top: -3px;
+    top: -2px;
+    left: -3px;
     display: inline-block;
     color: #000;
 }
@@ -18,15 +19,15 @@
 @keyframes cursor-blink {
 
     0% {
-        color: #000;
+        opacity: 1;
     }
 
     50% {
-        color: #fff;
+        opacity: 0;
     }
 
     100% {
-        color: #000;
+        opacity: 1;
     }
 
 }

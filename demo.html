@@ -26,7 +26,14 @@
                 element        : document.getElementById('text-prompt'),
 
                 // Text
-                text           : ['The quick brown fox...', 'jumps over...', 'the lazy dog.'],
+                text           : [
+                    'Prompt-writer',
+                    'This is the beginning of a beautiful friendship.',
+                    'You\'re gonna need a bigger boat.',
+                    'Nobody exists on purpose. Nobody belongs anywhere. Everybody’s gonna die. Come watch TV?',
+                    'May the Force be with you.',
+                    'The first rule of Fight Club is: You do not talk about Fight Club.'
+                ],
 
                 // Duration before the text starts writing
                 addDelay       : 0,
@@ -35,13 +42,13 @@
                 addSpeed       : 10,
 
                 // Somewhat simulate human typing by varying the speed (by a +/- variance)
-                speedVariance  : 150,
+                speedVariance  : 100,
 
                 // Delay deleting before erasing
                 deleteDelay    : 1500,
 
                 // How fast each letter is removed
-                deleteSpeed    : 50,
+                deleteSpeed    : 40,
 
                 // Infinite loop
                 loopInfinitely: true,
