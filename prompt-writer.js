@@ -1,23 +1,35 @@
 class TextWriter {
 
-    constructor( config ) {
+    constructor({
+        element         = undefined,
+        text            = ['Hello World'],
+        addDelay        = 1000,
+        addSpeed        = 100,
+        speedVariance   = 0,
+        deleteDelay     = 1000,
+        deleteSpeed     = 50,
+        loopInfinitely  = true,
+        // endPoint        = 'end',
+        cursorCharacter = '|'
+    }) {
 
         // Private
         this._textIndexFirst = 0;
         this._textIndexCurr  = 0;
-        this._textIndexLast  = config.text.length - 1;
+        this._textIndexLast  = text.length - 1;
 
         // Public
-        this.element         = config.element;
-        this.addDelay        = config.addDelay        || 1000;
-        this.addSpeed        = config.addSpeed        || 100;
-        this.speedVariance   = config.speedVariance   || 0;
-        this.deleteDelay     = config.deleteDelay     || 1000;
-        this.deleteSpeed     = config.deleteSpeed     || 50;
-        this.loopInfinitely  = config.loopInfinitely  || true;
-        this.endPoint        = config.endPoint        || 'end';
-        this.cursorCharacter = config.cursorCharacter || '|';
-        this.text            = config.text;
+        this.element         = element;
+        this.text            = text;
+
+        this.addDelay        = addDelay;
+        this.addSpeed        = addSpeed;
+        this.speedVariance   = speedVariance;
+        this.deleteDelay     = deleteDelay;
+        this.deleteSpeed     = deleteSpeed;
+        this.loopInfinitely  = loopInfinitely;
+        // this.endPoint        = endPoint;
+        this.cursorCharacter = cursorCharacter;
 
         // Require a DOM node type
         if ( !this.element ) {
