@@ -32,19 +32,19 @@ class TextWriter {
         this.cursorCharacter = cursorCharacter;
 
         // Require a DOM node type
-        if ( !this.element ) {
+        if (!this.element) {
             throw new Error('An element is required');
         }
 
         // Require a string
-        if ( !this.text ) {
+        if (!this.text) {
             throw new Error('Text is required');
         }
 
+        // Span elements need to touch to prevent space
         this.element.innerHTML = `
-            <span class="text-fill"></span>
-            <span class="text-fill-cursor${ !!this.addDelay ? ' text-fill-cursor--animate' : '' }">
-                ${ this.cursorCharacter }
+            <span class="text-fill"></span><span class="text-fill-cursor${!!this.addDelay ? ' text-fill-cursor--animate' : ''}">
+                ${this.cursorCharacter}
             </span>`;
 
         this.textLength = this.text[ this._textIndexFirst ].length;
@@ -53,14 +53,14 @@ class TextWriter {
         // If there's a waiting time
         setTimeout(
             () => {
-                if ( this.addDelay ) {
-                    this.removeClass( ' text-fill-cursor--animate' );
+                if (this.addDelay) {
+                    this.removeClass('text-fill-cursor--animate');
                 }
                 this.addTextToElement(
                     this.element.children[0],
                     this.text[ this._textIndexCurr ].split(''),
                     this.counter,
-                    this.calculateSpeed( this.addSpeed, this.speedVariance )
+                    this.calculateSpeed(this.addSpeed, this.speedVariance)
                 );
             },
             this.addDelay
@@ -72,16 +72,16 @@ class TextWriter {
      * Add a class from the cursor element
      * @param  {string} className The class name to add
      */
-    addClass( className ) {
-        this.element.children[1].className += className;
+    addClass(className) {
+        this.element.children[1].classList.add(className);
     }
 
     /**
      * Remove a class from the cursor element
      * @param  {string} className The class name to add
      */
-    removeClass( className ) {
-        this.element.children[1].className = this.element.children[1].className.replace( className, '' );
+    removeClass(className) {
+        this.element.children[1].classList.remove(className);
     }
 
     /**
@@ -90,14 +90,14 @@ class TextWriter {
      * @param  {number} speedVariance Optional: provide a variance to multioply the base speed by
      * @return {number}               The base or calculated speed
      */
-    calculateSpeed( speed, speedVariance ) {
+    calculateSpeed(speed, speedVariance) {
 
         // Nothing to calculate
-        if ( speedVariance === 0 ) {
+        if (speedVariance === 0) {
             return speed;
         }
 
-        return speed + Math.ceil( Math.random() * speedVariance );
+        return speed + Math.ceil(Math.random() * speedVariance);
 
     }
 
@@ -108,13 +108,13 @@ class TextWriter {
      * @param  {number} counter     The counter / position to remove from, typically the start of the string
      * @param  {number} deleteSpeed The speed in ms to add each letter
      */
-    addTextToElement( element, text, counter, speed ) {
+    addTextToElement(element, text, counter, speed) {
 
-        setTimeout( () => {
+        setTimeout(() => {
 
             // Remove the animation class before adding text
-            if ( counter === 0 ) {
-                this.removeClass( ' text-fill-cursor--animate' );
+            if (counter === 0) {
+                this.removeClass('text-fill-cursor--animate');
             }
 
             // Add the text node
@@ -122,19 +122,19 @@ class TextWriter {
             element.textContent += text[ counter++ ];
 
             // Recursively add the next character
-            if ( counter < text.length ) {
-                this.addTextToElement( element, text, counter, this.calculateSpeed( this.addSpeed, this.speedVariance ) );
+            if (counter < text.length) {
+                this.addTextToElement(element, text, counter, this.calculateSpeed(this.addSpeed, this.speedVariance));
             }
 
             // Animate when it has reached the end
-            if ( counter >= text.length ) {
-                this.addClass( ' text-fill-cursor--animate' );
+            if (counter >= text.length) {
+                this.addClass('text-fill-cursor--animate');
             }
 
             // If the current text is complete and there's instructions to remove the text
             if (
                 counter >= text.length &&
-                (   this.loopInfinitely ||
+                (  this.loopInfinitely ||
                     this._textIndexCurr < this._textIndexLast
                 )
             ) {
@@ -146,7 +146,7 @@ class TextWriter {
                 );
             }
 
-        }, speed );
+        }, speed);
 
     };
 
@@ -156,32 +156,32 @@ class TextWriter {
      * @param  {number} counter     The counter / position to remove from, typically the end of the string
      * @param  {number} deleteSpeed The speed in ms to remove each letter
      */
-    removeTextFromElement( element, counter, deleteSpeed ) {
+    removeTextFromElement(element, counter, deleteSpeed) {
 
-        setTimeout( () => {
+        setTimeout(() => {
 
             // Remove the animation class before removing text
-            if ( counter === element.textContent.length ) {
-                this.removeClass( ' text-fill-cursor--animate' );
+            if (counter === element.textContent.length) {
+                this.removeClass('text-fill-cursor--animate');
             }
 
             // Add the text node
             // De-increment the character counter/index
-            element.textContent = element.textContent.substring( 0, counter-- );
+            element.textContent = element.textContent.substring(0, counter--);
 
             // Recursively remove the next character
-            if ( counter >= 0 ) {
-                this.removeTextFromElement( element, counter, this.deleteSpeed );
+            if (counter >= 0) {
+                this.removeTextFromElement(element, counter, this.deleteSpeed);
             }
 
             // Animate when it has reached the start
-            if ( counter < 0 ) {
-                this.addClass( ' text-fill-cursor--animate' );
+            if (counter < 0) {
+                this.addClass('text-fill-cursor--animate');
             }
 
             // Loop if set to infinitely loop
-            if ( counter < 0 &&
-                ( this.loopInfinitely ||
+            if (counter < 0 &&
+                (this.loopInfinitely ||
                     this._textIndexCurr <= this._textIndexLast
                     )
             ) {
@@ -213,7 +213,7 @@ class TextWriter {
                 );
             }
 
-        }, deleteSpeed );
+        }, deleteSpeed);
 
     }
 
